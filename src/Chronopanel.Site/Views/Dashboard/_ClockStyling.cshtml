@@ -1,0 +1,39 @@
+﻿@model Chronopanel.Site.ViewModels.Dashboard.IndexResponse
+
+@{
+    var templatesCustomization = Chronopanel.Site.Models.TemplatesCustomization.IndexRequest.CreateRequest(
+        Model.BackgroundColor,
+        Model.HoursActiveColor,
+        Model.HoursInactiveColor,
+        Model.MinutesActiveColor,
+        Model.MinutesInactiveColor,
+        Model.SecondsActiveColor,
+        Model.SecondsInactiveColor);
+}
+
+<style>
+    .second-ones .slide {
+        animation-delay: -@(Model.SecondOnes)s;
+    }
+
+    .second-tens .slide {
+        animation-delay: -@(Model.SecondTens)s;
+    }
+
+    .minute-ones .slide {
+        animation-delay: -@(Model.MinuteOnes)s;
+    }
+
+    .minute-tens .slide {
+        animation-delay: -@(Model.MinuteTens)s;
+    }
+
+    .hour-ones .slide {
+        animation-delay: -@(Model.HourOnes)s;
+    }
+
+    .hour-tens .slide {
+        animation-delay: -@(Model.HourTens)s;
+    }
+</style>
+<link rel="stylesheet" href="@Url.Action("Index", "TemplatesCustomization", templatesCustomization)" />

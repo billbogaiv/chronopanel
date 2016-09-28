@@ -1,0 +1,95 @@
+﻿@model Chronopanel.Site.ViewModels.Customize.IndexResponse
+
+@{
+    ViewData["Title"] = "Customize colors";
+}
+
+@section styles {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/customize/index.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/customize/index.min.css" asp-append-version="true" />
+    </environment>
+}
+
+<h2>Pre-defined color swatches</h2>
+<ul class="swatch-container">
+    @foreach (var color in Model.ColorSwatches)
+    {
+        <li>
+            @{
+                var request = Chronopanel.Site.Models.Home.IndexRequest.CreateRequest(
+                    color.BackgroundColor,
+                    color.HoursActiveColor,
+                    color.HoursInactiveColor,
+                    color.MinutesActiveColor,
+                    color.MinutesInactiveColor,
+                    color.SecondsActiveColor,
+                    color.SecondsInactiveColor);
+            }
+            <a href="@Url.Action("Index", "Home", request)">
+                <ol class="swatch">
+                    <li class="color" style="background-color: #@(color.BackgroundColor); color: #@(color.BackgroundColor);">#@(color.BackgroundColor)</li>
+                    <li class="color" style="background-color: #@(color.HoursActiveColor); color: #@(color.HoursActiveColor);">#@(color.HoursActiveColor)</li>
+                    <li class="color" style="background-color: #@(color.HoursInactiveColor); color: #@(color.HoursInactiveColor);">#@(color.HoursInactiveColor)</li>
+                    <li class="color" style="background-color: #@(color.MinutesActiveColor); color: #@(color.MinutesActiveColor);">#@(color.MinutesActiveColor)</li>
+                    <li class="color" style="background-color: #@(color.MinutesInactiveColor); color: #@(color.MinutesInactiveColor);">#@(color.MinutesInactiveColor)</li>
+                    <li class="color" style="background-color: #@(color.SecondsActiveColor); color: #@(color.SecondsActiveColor);">#@(color.SecondsActiveColor)</li>
+                    <li class="color" style="background-color: #@(color.SecondsInactiveColor); color: #@(color.SecondsInactiveColor);">#@(color.SecondsInactiveColor)</li>
+                </ol>
+                <div class="title">@color.Name</div>
+            </a>
+        </li>
+    }
+</ul>
+<hr />
+<h2>Custom colors</h2>
+<form method="post">
+    <ul id="custom-colors">
+        <li class="custom-color">
+            <h3 class="section-header">Background color</h3>
+            <label>
+                <em>(Darker colors work better with active light effect)</em>
+                <input type="color" class="color-picker" asp-for="BackgroundColor" placeholder="#@Model.BackgroundColor" value="#@Model.BackgroundColor" />
+            </label>
+        </li>
+        <li class="custom-color">
+            <h3 class="section-header">Hours</h3>
+            <label>
+                Active color
+                <input type="color" class="color-picker" asp-for="HoursActiveColor" placeholder="#@Model.HoursActiveColor" value="#@Model.HoursActiveColor" />
+            </label>
+
+            <label>
+                Inactive color
+                <input type="color" class="color-picker" asp-for="HoursInactiveColor" placeholder="#@Model.HoursInactiveColor" value="#@Model.HoursInactiveColor" />
+            </label>
+        </li>
+        <li class="custom-color">
+            <h3 class="section-header">Minutes</h3>
+            <label>
+                Active color
+                <input type="color" class="color-picker" asp-for="MinutesActiveColor" placeholder="#@Model.MinutesActiveColor" value="#@Model.MinutesActiveColor" />
+            </label>
+            <label>
+                Inactive color
+                <input type="color" class="color-picker" asp-for="MinutesInactiveColor" placeholder="#@Model.MinutesInactiveColor" value="#@Model.MinutesInactiveColor" />
+            </label>
+        </li>
+        <li class="custom-color">
+            <h3 class="section-header">Seconds</h3>
+            <label>
+                Active color
+                <input type="color" class="color-picker" asp-for="SecondsActiveColor" placeholder="#@Model.SecondsActiveColor" value="#@Model.SecondsActiveColor" />
+            </label>
+            <label>
+                Inactive color
+                <input type="color" class="color-picker" asp-for="SecondsInactiveColor" placeholder="#@Model.SecondsInactiveColor" value="#@Model.SecondsInactiveColor" />
+            </label>
+        </li>
+        <li id="submit" class="custom-color">
+            <button class="button">Update</button>
+        </li>
+    </ul>
+</form>

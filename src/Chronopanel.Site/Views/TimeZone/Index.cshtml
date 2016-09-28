@@ -1,0 +1,17 @@
+﻿@model Chronopanel.Site.ViewModels.TimeZone.IndexResponse
+
+@{
+    ViewData["Title"] = "Set time zone";
+}
+
+<h2>Select time zone</h2>
+<form method="post">
+    <select name="timeZone">
+        @foreach (var timeZone in Model.TimeZones)
+        {
+            <option value="@timeZone.Id" selected="@(timeZone.Id == Model.TimeZoneId ? "selected" : null)">@timeZone.Id (@timeZone.Offset hours | @timeZone.Name)</option>
+        }
+    </select>
+
+    <button>Update</button>
+</form>

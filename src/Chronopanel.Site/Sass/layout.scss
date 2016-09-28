@@ -1,0 +1,35 @@
+﻿body {
+    margin: 0.5em;
+    max-width: 1440px;
+}
+
+header {
+    margin-bottom: 1em;
+
+    #description, #title {
+        text-align: center;
+    }
+
+    #description {
+        font-style: italic;
+    }
+
+    #logo {
+        filter: drop-shadow(0.25rem 0.25rem 0.25rem #555555);
+    }
+}
+
+footer {
+    margin-top: 1em;
+    text-align: center;
+}
+
+@media (min-width: 1440px) {
+    body {
+        box-sizing: content-box;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+}

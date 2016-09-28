@@ -1,0 +1,58 @@
+﻿@model Chronopanel.Site.ViewModels.Home.IndexResponse
+
+@{
+    ViewData["Title"] = "Home";
+
+    var customizeRequest = Chronopanel.Site.Models.Customize.IndexRequest.CreateRequest(
+        Model.Dashboard.BackgroundColor,
+        Model.Dashboard.HoursActiveColor,
+        Model.Dashboard.HoursInactiveColor,
+        Model.Dashboard.MinutesActiveColor,
+        Model.Dashboard.MinutesInactiveColor,
+        Model.Dashboard.SecondsActiveColor,
+        Model.Dashboard.SecondsInactiveColor);
+
+    var dashboardRequest = Chronopanel.Site.Models.Dashboard.IndexRequest.CreateRequest(
+        Model.Dashboard.BackgroundColor,
+        Model.Dashboard.HoursActiveColor,
+        Model.Dashboard.HoursInactiveColor,
+        Model.Dashboard.MinutesActiveColor,
+        Model.Dashboard.MinutesInactiveColor,
+        Model.Dashboard.SecondsActiveColor,
+        Model.Dashboard.SecondsInactiveColor,
+        Model.TimeZoneId);
+
+    var timeZoneId = Model.IsTimeZoneSet() ? Model.TimeZoneId : "GMT";
+}
+
+@section styles {
+    @Html.Partial("../Dashboard/_ClockStyling", Model.Dashboard)
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/home/index.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/home/index.min.css" asp-append-version="true" />
+    </environment>
+    <style>
+        #clock-container {
+            background-color: #@(Model.Dashboard.BackgroundColor) !important;
+        }
+    </style>
+}
+
+<h2 id="panel-title">Featured panel–<a href="https://en.wikipedia.org/wiki/Binary-coded_decimal">Binary-Coded Decimal</a></h2>
+<p id="panel-description">
+    <strong>How to read:</strong> Each column represents one-digit in the <strong>HH:MM:SS</strong> format. Bulb-values are one, two, four, and eight, and are read from the bottom-up. To convert a column's value, add the values of the lit bulbs. For example, if the far-right column has the two middle bulbs lit, the value is six (i.e. <em>2 + 4</em>). If the bottom and top bulbs are lit, the value is nine (i.e. <em>1 + 8</em>).
+</p>
+@Html.Partial("../Dashboard/_ClockContainer")
+<ul id="clock-actions">
+    <li class="clock-action">
+        <a href="@Url.Action("Index", "TimeZone")" class="@(!Model.IsTimeZoneSet() ? "no-time-zone" : null)">🌐 Set time zone (@timeZoneId)</a>
+    </li>
+    <li class="clock-action">
+        <a href="@Url.Action("Index", "Customize", customizeRequest)">🎨 Customize colors</a>
+    </li>
+    <li class="clock-action">
+        <a href="@Url.Action("Index", "Dashboard", dashboardRequest)" target="_blank">📌 Dashboard</a>
+    </li>
+</ul>

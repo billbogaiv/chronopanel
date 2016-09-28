@@ -1,0 +1,202 @@
+body {
+  background-color: $background-color; }
+
+@keyframes base10-first-seconds {
+  0%, 9.99999%, 20%, 29.99999%, 40%, 49.99999%, 60%, 69.99999%, 80%, 89.99999%, 100% {
+    background-color: $seconds-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  10%, 19.99999%, 30%, 39.99999%, 50%, 59.99999%, 70%, 79.99999%, 90%, 99.99999% {
+    background-color: $seconds-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $seconds-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-first-minutes {
+  0%, 9.99999%, 20%, 29.99999%, 40%, 49.99999%, 60%, 69.99999%, 80%, 89.99999%, 100% {
+    background-color: $minutes-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  10%, 19.99999%, 30%, 39.99999%, 50%, 59.99999%, 70%, 79.99999%, 90%, 99.99999% {
+    background-color: $minutes-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $minutes-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-first-hours {
+  0%, 9.99999%, 20%, 29.99999%, 40%, 49.99999%, 60%, 69.99999%, 80%, 89.99999%, 100% {
+    background-color: $hours-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  10%, 19.99999%, 30%, 39.99999%, 50%, 59.99999%, 70%, 79.99999%, 90%, 99.99999% {
+    background-color: $hours-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $hours-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-second-seconds {
+  0%, 19.99999%, 40%, 59.99999%, 80%, 100% {
+    background-color: $seconds-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  20%, 39.99999%, 60%, 79.99999% {
+    background-color: $seconds-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $seconds-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-second-minutes {
+  0%, 19.99999%, 40%, 59.99999%, 80%, 100% {
+    background-color: $minutes-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  20%, 39.99999%, 60%, 79.99999% {
+    background-color: $minutes-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $minutes-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-second-hours {
+  0%, 19.99999%, 40%, 59.99999%, 80%, 100% {
+    background-color: $hours-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  20%, 39.99999%, 60%, 79.99999% {
+    background-color: $hours-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $hours-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-third-seconds {
+  0%, 39.99999%, 80%, 100% {
+    background-color: $seconds-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  40%, 79.99999% {
+    background-color: $seconds-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $seconds-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-third-minutes {
+  0%, 39.99999%, 80%, 100% {
+    background-color: $minutes-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  40%, 79.99999% {
+    background-color: $minutes-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $minutes-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-third-hours {
+  0%, 39.99999%, 80%, 100% {
+    background-color: $hours-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  40%, 79.99999% {
+    background-color: $hours-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $hours-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-fourth-seconds {
+  0%, 79.99999%, 100% {
+    background-color: $seconds-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  80%, 99.99999% {
+    background-color: $seconds-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $seconds-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-fourth-minutes {
+  0%, 79.99999%, 100% {
+    background-color: $minutes-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  80%, 99.99999% {
+    background-color: $minutes-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $minutes-active-color;
+    z-index: 1000; } }
+
+@keyframes base10-fourth-hours {
+  0%, 79.99999%, 100% {
+    background-color: $hours-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  80%, 99.99999% {
+    background-color: $hours-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $hours-active-color;
+    z-index: 1000; } }
+
+@keyframes base6-first-seconds {
+  0%, 16.66666%, 33.33333%, 49.99999%, 66.66667%, 83.33332%, 100% {
+    background-color: $seconds-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  16.66667%, 33.33332%, 50%, 66.66666%, 83.33333%, 99.99999% {
+    background-color: $seconds-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $seconds-active-color;
+    z-index: 1000; } }
+
+@keyframes base6-first-minutes {
+  0%, 16.66666%, 33.33333%, 49.99999%, 66.66667%, 83.33332%, 100% {
+    background-color: $minutes-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  16.66667%, 33.33332%, 50%, 66.66666%, 83.33333%, 99.99999% {
+    background-color: $minutes-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $minutes-active-color;
+    z-index: 1000; } }
+
+@keyframes base6-second-seconds {
+  0%, 33.33332%, 66.66667%, 100% {
+    background-color: $seconds-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  33.33333%, 66.66666% {
+    background-color: $seconds-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $seconds-active-color;
+    z-index: 1000; } }
+
+@keyframes base6-second-minutes {
+  0%, 33.33332%, 66.66667%, 100% {
+    background-color: $minutes-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  33.33333%, 66.66666% {
+    background-color: $minutes-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $minutes-active-color;
+    z-index: 1000; } }
+
+@keyframes base6-third-seconds {
+  0%, 66.66666%, 100% {
+    background-color: $seconds-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  66.66667%, 99.99999% {
+    background-color: $seconds-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $seconds-active-color;
+    z-index: 1000; } }
+
+@keyframes base6-third-minutes {
+  0%, 66.66666%, 100% {
+    background-color: $minutes-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  66.66667%, 99.99999% {
+    background-color: $minutes-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $minutes-active-color;
+    z-index: 1000; } }
+
+@keyframes base24-first-hours {
+  0%, 41.66666%, 83.33333%, 100% {
+    background-color: $hours-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  41.66667%, 83.33332% {
+    background-color: $hours-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $hours-active-color;
+    z-index: 1000; } }
+
+@keyframes base24-second-hours {
+  0%, 83.33332%, 100% {
+    background-color: $hours-inactive-color;
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0; }
+  83.33333%, 99.99999% {
+    background-color: $hours-active-color;
+    box-shadow: 0 0 1.75vw 0.5vw $hours-active-color;
+    z-index: 1000; } }

@@ -1,0 +1,188 @@
+﻿$background-color: '$background-color' !default;
+$seconds-active-color: '$seconds-active-color' !default;
+$seconds-inactive-color: '$seconds-inactive-color' !default;
+$minutes-active-color: '$minutes-active-color' !default;
+$minutes-inactive-color: '$minutes-inactive-color' !default;
+$hours-active-color: '$hours-active-color' !default;
+$hours-inactive-color: '$hours-inactive-color' !default;
+
+body {
+    background-color: #{$background-color};
+}
+
+@mixin bit-active($color) {
+    background-color: #{$color};
+    box-shadow: 0 0 1.75vw 0.5vw #{$color};
+    z-index: 1000;
+}
+
+@mixin bit-inactive($color) {
+    background-color: #{$color};
+    box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    z-index: 0;
+}
+
+@mixin base10-first($active-color, $inactive-color) {
+    0%, 9.99999%, 20%, 29.99999%, 40%, 49.99999%, 60%, 69.99999%, 80%, 89.99999%, 100% {
+        @include bit-inactive($inactive-color);
+    }
+
+    10%, 19.99999%, 30%, 39.99999%, 50%, 59.99999%, 70%, 79.99999%, 90%, 99.99999% {
+        @include bit-active($active-color);
+    }
+}
+
+@keyframes base10-first-seconds {
+    @include base10-first($seconds-active-color, $seconds-inactive-color);
+}
+
+@keyframes base10-first-minutes {
+    @include base10-first($minutes-active-color, $minutes-inactive-color);
+}
+
+@keyframes base10-first-hours {
+    @include base10-first($hours-active-color, $hours-inactive-color);
+}
+
+@mixin base10-second($active-color, $inactive-color) {
+    0%, 19.99999%, 40%, 59.99999%, 80%, 100% {
+        @include bit-inactive($inactive-color);
+    }
+
+    20%, 39.99999%, 60%, 79.99999% {
+        @include bit-active($active-color);
+    }
+}
+
+@keyframes base10-second-seconds {
+    @include base10-second($seconds-active-color, $seconds-inactive-color);
+}
+
+@keyframes base10-second-minutes {
+    @include base10-second($minutes-active-color, $minutes-inactive-color);
+}
+
+@keyframes base10-second-hours {
+    @include base10-second($hours-active-color, $hours-inactive-color);
+}
+
+@mixin base10-third($active-color, $inactive-color) {
+    0%, 39.99999%, 80%, 100% {
+        @include bit-inactive($inactive-color);
+    }
+
+    40%, 79.99999% {
+        @include bit-active($active-color);
+    }
+}
+
+@keyframes base10-third-seconds {
+    @include base10-third($seconds-active-color, $seconds-inactive-color);
+}
+
+@keyframes base10-third-minutes {
+    @include base10-third($minutes-active-color, $minutes-inactive-color);
+}
+
+@keyframes base10-third-hours {
+    @include base10-third($hours-active-color, $hours-inactive-color);
+}
+
+@mixin base10-fourth($active-color, $inactive-color) {
+    0%, 79.99999%, 100% {
+        @include bit-inactive($inactive-color);
+    }
+
+    80%, 99.99999% {
+        @include bit-active($active-color);
+    }
+}
+
+@keyframes base10-fourth-seconds {
+    @include base10-fourth($seconds-active-color, $seconds-inactive-color);
+}
+
+@keyframes base10-fourth-minutes {
+    @include base10-fourth($minutes-active-color, $minutes-inactive-color);
+}
+
+@keyframes base10-fourth-hours {
+    @include base10-fourth($hours-active-color, $hours-inactive-color);
+}
+
+
+@mixin base6-first($active-color, $inactive-color) {
+    0%, 16.66666%, 33.33333%, 49.99999%, 66.66667%, 83.33332%, 100% {
+        @include bit-inactive($inactive-color);
+    }
+
+    16.66667%, 33.33332%, 50%, 66.66666%, 83.33333%, 99.99999% {
+        @include bit-active($active-color);
+    }
+}
+
+@keyframes base6-first-seconds {
+    @include base6-first($seconds-active-color, $seconds-inactive-color);
+}
+
+@keyframes base6-first-minutes {
+    @include base6-first($minutes-active-color, $minutes-inactive-color);
+}
+
+@mixin base6-second($active-color, $inactive-color) {
+    0%, 33.33332%, 66.66667%, 100% {
+        @include bit-inactive($inactive-color);
+    }
+
+    33.33333%, 66.66666% {
+        @include bit-active($active-color);
+    }
+}
+
+@keyframes base6-second-seconds {
+    @include base6-second($seconds-active-color, $seconds-inactive-color);
+}
+
+@keyframes base6-second-minutes {
+    @include base6-second($minutes-active-color, $minutes-inactive-color);
+}
+
+@mixin base6-third($active-color, $inactive-color) {
+    0%, 66.66666%, 100% {
+        @include bit-inactive($inactive-color);
+    }
+
+    66.66667%, 99.99999% {
+        @include bit-active($active-color);
+    }
+}
+
+@keyframes base6-third-seconds {
+    @include base6-third($seconds-active-color, $seconds-inactive-color);
+}
+
+@keyframes base6-third-minutes {
+    @include base6-third($minutes-active-color, $minutes-inactive-color);
+}
+
+
+
+@keyframes base24-first-hours {
+    0%, 41.66666%, 83.33333%, 100% {
+        @include bit-inactive($hours-inactive-color);
+    }
+
+    41.66667%, 83.33332% {
+        @include bit-active($hours-active-color);
+    }
+}
+
+@keyframes base24-second-hours {
+    0%, 83.33332%, 100% {
+        @include bit-inactive($hours-inactive-color);
+    }
+
+    83.33333%, 99.99999% {
+        @include bit-active($hours-active-color);
+    }
+}

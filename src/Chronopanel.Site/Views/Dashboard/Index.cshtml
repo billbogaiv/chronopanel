@@ -1,0 +1,18 @@
+﻿@model Chronopanel.Site.ViewModels.Dashboard.IndexResponse
+
+@{
+    Layout = "_DashboardLayout";
+    ViewData["Title"] = "Dashboard";
+}
+
+@section styles {
+    @Html.Partial("../Dashboard/_ClockStyling", Model)
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/dashboard/index.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/dashboard/index.min.css" asp-append-version="true" />
+    </environment>
+}
+
+@Html.Partial("../Dashboard/_ClockContainer")
