@@ -12,12 +12,13 @@ body {
 #clock-container {
   display: flex;
   font-size: 0;
+  line-height: 0;
+  list-style-type: none;
+  margin: 0;
   max-height: 100vh;
   max-width: calc(100vh * (3 / 2));
-  text-align: center;
-  list-style-type: none;
   padding: 0;
-  margin: 0; }
+  text-align: center; }
 
 .digit-container {
   align-items: flex-end;
@@ -32,25 +33,35 @@ body {
 .digit-container > .slide-container:last-child {
   margin-left: 0vh; }
 
+.screen-reader-accessible-hide {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
 .slide-container {
   margin: 0;
   padding: 0;
   width: 50%; }
 
 .slide {
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
   border-style: outset;
   border-width: 0px;
-  width: 95%;
-  height: 0;
-  padding-bottom: calc(95% - (0px * 2));
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
   display: inline-block;
+  height: 0;
+  margin-bottom: calc(2.5% + 0.5vh);
   margin-left: 2.5%;
   margin-right: 2.5%;
   margin-top: calc(2.5% + 0.5vh);
-  margin-bottom: calc(2.5% + 0.5vh);
-  border-radius: 50%;
-  position: relative; }
+  overflow: hidden;
+  padding-bottom: calc(95% - (0px * 2));
+  position: relative;
+  width: 95%; }
 
 .second-ones .slide {
   animation-duration: 10s;

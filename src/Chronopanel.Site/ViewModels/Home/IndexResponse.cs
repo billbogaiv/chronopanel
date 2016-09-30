@@ -1,4 +1,5 @@
-﻿using NodaTime;
+﻿using Chronopanel.ViewModels.Dashboard;
+using NodaTime;
 using System;
 using DashboardIndexResponse = Chronopanel.Site.ViewModels.Dashboard.IndexResponse;
 
@@ -57,6 +58,8 @@ namespace Chronopanel.Site.ViewModels.Home
                 throw new ArgumentNullException(nameof(secondsInactiveColor));
             }
 
+            ClockContainer = new ClockContainerViewModel(time);
+
             Dashboard = new DashboardIndexResponse(
                 time,
                 backgroundColor,
@@ -70,6 +73,7 @@ namespace Chronopanel.Site.ViewModels.Home
             TimeZoneId = timeZone;
         }
 
+        public readonly ClockContainerViewModel ClockContainer;
         public readonly DashboardIndexResponse Dashboard;
         public bool IsTimeZoneSet() => !string.IsNullOrEmpty(TimeZoneId);
         public readonly string TimeZoneId;

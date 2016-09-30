@@ -1,10 +1,10 @@
 ﻿$background-color: '$background-color' !default;
-$seconds-active-color: '$seconds-active-color' !default;
-$seconds-inactive-color: '$seconds-inactive-color' !default;
-$minutes-active-color: '$minutes-active-color' !default;
-$minutes-inactive-color: '$minutes-inactive-color' !default;
 $hours-active-color: '$hours-active-color' !default;
 $hours-inactive-color: '$hours-inactive-color' !default;
+$minutes-active-color: '$minutes-active-color' !default;
+$minutes-inactive-color: '$minutes-inactive-color' !default;
+$seconds-active-color: '$seconds-active-color' !default;
+$seconds-inactive-color: '$seconds-inactive-color' !default;
 
 body {
     background-color: #{$background-color};
@@ -13,12 +13,14 @@ body {
 @mixin bit-active($color) {
     background-color: #{$color};
     box-shadow: 0 0 1.75vw 0.5vw #{$color};
+    color: #{$color};
     z-index: 1000;
 }
 
 @mixin bit-inactive($color) {
     background-color: #{$color};
     box-shadow: 0.15vw 0.15vw 0.15vw rgba(0, 0, 0, 0.75);
+    color: #{$color};
     z-index: 0;
 }
 

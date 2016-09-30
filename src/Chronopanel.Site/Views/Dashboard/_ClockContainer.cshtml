@@ -1,40 +1,58 @@
-﻿<ol id="clock-container">
+﻿@model Chronopanel.ViewModels.Dashboard.ClockContainerViewModel
+
+@{
+    var activeCharacter = "*";
+}
+
+<ol id="clock-container">
     <li class="digit-container">
+        Tens-digit of hour:
+        <br />
         <ul class="slide-container hour-tens">
-            <li class="slide"></li>
-            <li class="slide"></li>
+            <li class="slide">2@(Model.HourTens2 ? activeCharacter : null)</li>
+            <li class="slide">1@(Model.HourTens1 ? activeCharacter : null)</li>
         </ul>
+        Ones-digit of hour:
+        <br />
         <ul class="slide-container hour-ones">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
+            <li class="slide">8@(Model.HourOnes8 ? activeCharacter : null)</li>
+            <li class="slide">4@(Model.HourOnes4 ? activeCharacter : null)</li>
+            <li class="slide">2@(Model.HourOnes2 ? activeCharacter : null)</li>
+            <li class="slide">1@(Model.HourOnes1 ? activeCharacter : null)</li>
         </ul>
     </li>
     <li class="digit-container">
+        Tens-digit of minute:
+        <br />
         <ul class="slide-container minute-tens">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
+            <li class="slide">4@(Model.MinuteTens4 ? activeCharacter : null)</li>
+            <li class="slide">2@(Model.MinuteTens2 ? activeCharacter : null)</li>
+            <li class="slide">1@(Model.MinuteTens1 ? activeCharacter : null)</li>
         </ul>
+        Ones-digit of minute:
+        <br />
         <ul class="slide-container minute-ones">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
+            <li class="slide">8@(Model.MinuteOnes8 ? activeCharacter : null)</li>
+            <li class="slide">4@(Model.MinuteOnes4 ? activeCharacter : null)</li>
+            <li class="slide">2@(Model.MinuteOnes2 ? activeCharacter : null)</li>
+            <li class="slide">1@(Model.MinuteOnes1 ? activeCharacter : null)</li>
         </ul>
     </li>
     <li class="digit-container">
+        Tens-digit of second:
+        <br />
         <ul class="slide-container second-tens">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
+            <li class="slide">4@(Model.SecondTens4 ? activeCharacter : null)</li>
+            <li class="slide">2@(Model.SecondTens2 ? activeCharacter : null)</li>
+            <li class="slide">1@(Model.SecondTens1 ? activeCharacter : null)</li>
         </ul>
+        Ones-digit of second:
+        <br />
         <ul class="slide-container second-ones">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
+            <li class="slide">8@(Model.SecondOnes8 ? activeCharacter : null)</li>
+            <li class="slide">4@(Model.SecondOnes4 ? activeCharacter : null)</li>
+            <li class="slide">2@(Model.SecondOnes2 ? activeCharacter : null)</li>
+            <li class="slide">1@(Model.SecondOnes1 ? activeCharacter : null)</li>
         </ul>
     </li>
 </ol>

@@ -6,12 +6,12 @@ $digit-container-padding: 1vh;
 $slide-container-padding: (6 - ($digit-container-padding * 6)) / 6;
 
 $background-color: initial;
-$seconds-active-color: #0000ff;
-$seconds-inactive-color: desaturate(darken($seconds-active-color, 25%), 25%);
-$minutes-active-color: #00ff00;
-$minutes-inactive-color: desaturate(darken($minutes-active-color, 25%), 25%);
 $hours-active-color: #ff0000;
 $hours-inactive-color: desaturate(darken($hours-active-color, 25%), 25%);
+$minutes-active-color: #00ff00;
+$minutes-inactive-color: desaturate(darken($minutes-active-color, 25%), 25%);
+$seconds-active-color: #0000ff;
+$seconds-inactive-color: desaturate(darken($seconds-active-color, 25%), 25%);
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -30,12 +30,13 @@ body {
 #clock-container {
     display: flex;
     font-size: 0;
+    line-height: 0;
+    list-style-type: none;
+    margin: 0;
     max-height: 100vh;
     max-width: calc(100vh * (3 / 2));
-    text-align: center;
-    list-style-type: none;
     padding: 0;
-    margin: 0;
+    text-align: center;
 }
 
 .digit-container {
@@ -54,6 +55,16 @@ body {
     margin-left: $slide-container-padding;
 }
 
+.screen-reader-accessible-hide {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
 .slide-container {
     margin: 0;
     padding: 0;
@@ -61,19 +72,20 @@ body {
 }
 
 .slide {
-    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
     border-style: outset;
     border-width: $bit-border-size;
-    width: $bit-width;
-    height: 0;
-    padding-bottom: calc(#{$bit-width} - (#{$bit-border-size} * 2));
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
     display: inline-block;
+    height: 0;
+    margin-bottom: calc(#{$bit-width-remainder-half} + 0.5vh);
     margin-left: $bit-width-remainder-half;
     margin-right: $bit-width-remainder-half;
     margin-top: calc(#{$bit-width-remainder-half} + 0.5vh);
-    margin-bottom: calc(#{$bit-width-remainder-half} + 0.5vh);
-    border-radius: 50%;
+    overflow: hidden;
+    padding-bottom: calc(#{$bit-width} - (#{$bit-border-size} * 2));
     position: relative;
+    width: $bit-width;
 }
 
 .second-ones .slide {

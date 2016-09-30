@@ -42,9 +42,12 @@
 
 <h2 id="panel-title">Featured panel–<a href="https://en.wikipedia.org/wiki/Binary-coded_decimal">Binary-Coded Decimal</a></h2>
 <p id="panel-description">
-    <strong>How to read:</strong> Each column represents one-digit in the <strong>HH:MM:SS</strong> format. Bulb-values are one, two, four, and eight, and are read from the bottom-up. To convert a column's value, add the values of the lit bulbs. For example, if the far-right column has the two middle bulbs lit, the value is six (i.e. <em>2 + 4</em>). If the bottom and top bulbs are lit, the value is nine (i.e. <em>1 + 8</em>).
+    <strong>How to read:</strong> Each column represents one-digit in the <strong>HH:MM:SS</strong> format. Bulb-values are one, two, four, and eight, and are read from the bottom-up. To convert a column's value, add the values of the lit bulbs. For example, if the far-right column has the bottom and top bulbs lit, the value is nine (i.e. <em>1 + 8</em>).
 </p>
-@Html.Partial("../Dashboard/_ClockContainer")
+<p class="screen-reader-accessible-hide">
+    When reading time, numbers with an adjacent asterisk are "active".
+</p>
+@Html.Partial("../Dashboard/_ClockContainer", Model.ClockContainer)
 <ul id="clock-actions">
     <li class="clock-action">
         <a href="@Url.Action("Index", "TimeZone")" class="@(!Model.IsTimeZoneSet() ? "no-time-zone" : null)">🌐 Set time zone (@timeZoneId)</a>

@@ -29,8 +29,8 @@ body {
   width: 50vw; }
 
 .no-time-zone {
-  animation-name: pulsate;
   animation-duration: 4s;
+  animation-name: pulsate;
   animation-iteration-count: infinite; }
 
 #panel-description {
