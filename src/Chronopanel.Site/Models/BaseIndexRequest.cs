@@ -6,12 +6,12 @@
         protected const string DefaultColor = "000000";
 
         public virtual string BackgroundColor { get; set; } = "000000";
-        public virtual string HoursActiveColor { get; set; } = "ff0000";
-        public virtual string HoursInactiveColor { get; set; } = "701010"; // desaturate(darken(25%), 25%)
-        public virtual string MinutesActiveColor { get; set; } = "00ff00";
-        public virtual string MinutesInactiveColor { get; set; } = "107010"; // desaturate(darken(25%), 25%)
-        public virtual string SecondsActiveColor { get; set; } = "0000ff";
-        public virtual string SecondsInactiveColor { get; set; } = "101070"; // desaturate(darken(25%), 25%)
+        public virtual string HoursActiveColor { get; set; } = "ffff00";
+        public virtual string HoursInactiveColor { get; set; } = "707010"; // desaturate(darken(25%), 25%)
+        public virtual string MinutesActiveColor { get; set; } = "00ffff";
+        public virtual string MinutesInactiveColor { get; set; } = "107070"; // desaturate(darken(25%), 25%)
+        public virtual string SecondsActiveColor { get; set; } = "ff00ff";
+        public virtual string SecondsInactiveColor { get; set; } = "701070"; // desaturate(darken(25%), 25%)
         public virtual string TimeZoneId { get; set; }
 
         public bool ContainsValidColors()
