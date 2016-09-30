@@ -1,6 +1,8 @@
 @keyframes pulsate {
-  50% {
-    font-weight: bold; } }
+  0%, 50% {
+    transform: scale(1); }
+  25% {
+    transform: scale(1.1); } }
 
 body {
   background-color: transparent !important; }
@@ -31,7 +33,9 @@ body {
 .no-time-zone {
   animation-duration: 4s;
   animation-name: pulsate;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  display: inline-block;
+  font-weight: bold; }
 
 #panel-description {
   text-align: justify; }

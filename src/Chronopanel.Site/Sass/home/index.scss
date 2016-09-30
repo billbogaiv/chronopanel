@@ -1,6 +1,10 @@
 ﻿@keyframes pulsate {
-    50% {
-        font-weight: bold;
+    0%, 50% {
+        transform: scale(1.0);
+    }
+
+    25% {
+        transform: scale(1.1);
     }
 }
 
@@ -41,6 +45,8 @@ body {
     animation-duration: 4s;
     animation-name: pulsate;
     animation-iteration-count: infinite;
+    display: inline-block;
+    font-weight: bold;
 }
 
 #panel-description {
