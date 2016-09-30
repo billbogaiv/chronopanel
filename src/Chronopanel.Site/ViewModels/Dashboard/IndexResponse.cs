@@ -1,4 +1,5 @@
-﻿using NodaTime;
+﻿using Chronopanel.ViewModels.Dashboard;
+using NodaTime;
 using System;
 
 namespace Chronopanel.Site.ViewModels.Dashboard
@@ -56,6 +57,7 @@ namespace Chronopanel.Site.ViewModels.Dashboard
             }
 
             BackgroundColor = backgroundColor;
+            ClockContainer = new ClockContainerViewModel(time);
             HoursActiveColor = hoursActiveColor;
             HoursInactiveColor = hoursInactiveColor;
             MinutesActiveColor = minutesActiveColor;
@@ -78,6 +80,7 @@ namespace Chronopanel.Site.ViewModels.Dashboard
         }
 
         public readonly string BackgroundColor;
+        public readonly ClockContainerViewModel ClockContainer;
         public readonly string HoursActiveColor;
         public readonly string HoursInactiveColor;
         public readonly string MinutesActiveColor;
