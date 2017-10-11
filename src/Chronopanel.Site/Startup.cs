@@ -7,8 +7,6 @@ using Microsoft.Extensions.Logging;
 using NodaTime;
 using NodaTime.TimeZones;
 using System.Collections.Generic;
-using WebMarkupMin.AspNetCore1;
-using WebMarkupMin.Core;
 
 namespace Chronopanel.Site
 {
@@ -39,18 +37,6 @@ namespace Chronopanel.Site
             services.AddSingleton<IDateTimeZoneProvider>(DateTimeZoneProviders.Tzdb);
             services.AddSingleton<TzdbDateTimeZoneSource>(TzdbDateTimeZoneSource.Default);
 
-            services
-                .AddWebMarkupMin(options =>
-                {
-                    options.AllowMinificationInDevelopmentEnvironment = true;
-                    options.AllowCompressionInDevelopmentEnvironment = true;
-                })
-                .AddHtmlMinification(options =>
-                {
-                    options.MinificationSettings.WhitespaceMinificationMode = WhitespaceMinificationMode.Aggressive;
-                })
-                .AddHttpCompression();
-
             // Add framework services.
             services.AddMvc();
         }
@@ -70,8 +56,6 @@ namespace Chronopanel.Site
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            app.UseWebMarkupMin();
 
             app.Use(async (context, next) =>
             {

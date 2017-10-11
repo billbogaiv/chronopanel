@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0402E2EE-6F02-48E1-B7B3-4AB556CA3942}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40E7412C-B14F-4571-953E-1B4DC0DDCD8F}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chronopanel.Site", "src\Chronopanel.Site\Chronopanel.Site.xproj", "{3603CF87-868A-4C29-8E86-ECC5822AE9DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chronopanel.Site", "src\Chronopanel.Site\Chronopanel.Site.csproj", "{3603CF87-868A-4C29-8E86-ECC5822AE9DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,5 +25,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3603CF87-868A-4C29-8E86-ECC5822AE9DF} = {0402E2EE-6F02-48E1-B7B3-4AB556CA3942}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04855F98-778E-489C-88B6-D941E3EA19D3}
 	EndGlobalSection
 EndGlobal
